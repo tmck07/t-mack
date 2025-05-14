@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> My Basic Website</title>
+  <title>My Basic Website</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #f4f4f4;
+      background: #e8f8f5;
     }
     header {
       background: #76d7c4;
@@ -18,7 +18,7 @@
       text-align: center;
     }
     nav {
-      background: #444;
+      background: #48c9b0;
       text-align: center;
       padding: 0.5rem;
     }
@@ -26,18 +26,41 @@
       color: white;
       margin: 0 15px;
       text-decoration: none;
+      font-weight: bold;
     }
     main {
       padding: 2rem;
+      background-color: #d1f2eb;
+      min-height: 80vh;
+      text-align: center;
+    }
+    main img {
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    main h2 {
+      color: #117864;
+    }
+    main p {
+      color: #2e4053;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
     }
     footer {
       background: #76d7c4;
       color: #fff;
       text-align: center;
       padding: 1rem;
-      position: fixed;
-      bottom: 0;
-      width: 100%;
+    }
+    .social-links a {
+      margin: 0 10px;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
@@ -46,7 +69,7 @@
   <header>
     <h1>Welcome to My Website</h1>
   </header>
-
+  
   <nav>
     <a href="#">Home</a>
     <a href="#">About</a>
@@ -54,13 +77,18 @@
   </nav>
 
   <main>
-    <h2>Hi and Welcome to my site</h2>
-    <p>This is a basic website made with HTML and CSS that will display my growth on projects over time.</p>
-    <p>Please check in again soon for more content soon.</p>
+    <!-- <img src="profile.jpg" alt="My Profile Picture" /> -->
+    <h2>Hi and Welcome to My Site</h2>
+    <p>Thank you for stopping by! This site is a personal space where I share my learning journey, showcase projects, and reflect on my growth. I'm excited to have you along as I explore and create.</p>
+    <p>Please check in again soon for more content.</p>
   </main>
 
   <footer>
-    &copy; 2025 My Website
+    <p>&copy; 2025 My Website</p>
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/taciannamcknight">LinkedIn</a> |
+      <a href="https://github.com/TMcK-cloud30">GitHub</a>
+    </div>
   </footer>
 
 </body>
