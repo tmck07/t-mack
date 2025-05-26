@@ -1,168 +1,250 @@
+Alright! Here’s your enhanced version with all the improvements:
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio</title>
-  <style>
-    :root {
-      --teal-dark: #006d77;
-      --teal: #0096a1;
-      --teal-light: #d0f0ef;
-      --text-dark: #073b4c;
-      --text-light: #ffffff;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>My Portfolio</title>
 
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: var(--teal-light);
-      color: var(--text-dark);
-    }
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    header {
-      background: var(--teal-dark);
-      color: var(--text-light);
-      padding: 2rem;
-      text-align: center;
-    }
+<style>
+  :root {
+    --teal-dark: #006d77;
+    --teal: #0096a1;
+    --teal-light: #d0f0ef;
+    --text-dark: #073b4c;
+    --text-light: #ffffff;
+  }
 
-    nav {
-      background: var(--teal);
-      padding: 1rem;
-      text-align: center;
+  body {
+    margin: 0;
+    font-family: 'Roboto', Arial, sans-serif;
+    background: var(--teal-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+  }
+
+  header.hero {
+    background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+    color: var(--text-light);
+    padding: 3rem 2rem;
+    text-align: center;
+    animation: fadeIn 1s ease forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  nav {
+    background: var(--teal);
+    padding: 1rem;
+    text-align: center;
+  }
+
+  nav a {
+    color: var(--text-light);
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  nav a:hover {
+    color: #ffde59;
+    transform: scale(1.1);
+  }
+
+  section {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+  }
+
+  section:nth-of-type(even) {
+    background: #f9f9f9;
+  }
+
+  section:nth-of-type(odd) {
+    background: #ffffff;
+  }
+
+  .hero h1 {
+    margin: 0;
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    color: #dceff0;
+  }
+
+  .portfolio, .blog {
+    margin-top: 2rem;
+  }
+
+  .card {
+    background: #ffffff;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-left: 5px solid var(--teal);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .card h3 {
+    margin: 0;
+    color: var(--teal-dark);
+  }
+
+  footer {
+    background: var(--teal-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+
+  footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 0.5rem;
+  }
+
+  .contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 0.7rem;
+    margin: 0.5rem 0;
+    border: 1px solid #b2dfdb;
+    border-radius: 4px;
+  }
+
+  .contact-form button {
+    background: var(--teal);
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+  }
+
+  .contact-form button:hover {
+    background: #ffde59;
+    color: var(--text-dark);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 600px) {
+    .hero h1 {
+      font-size: 2rem;
     }
 
     nav a {
-      color: var(--text-light);
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    section {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-
-    .hero h1 {
-      margin: 0;
-      font-size: 2.5rem;
-    }
-
-    .hero p {
-      font-size: 1.2rem;
-      color: #dceff0;
-    }
-
-    .portfolio, .blog {
-      margin-top: 2rem;
-    }
-
-    .card {
-      background: #ffffff;
-      padding: 1rem;
-      margin: 1rem 0;
-      border-left: 5px solid var(--teal);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    }
-
-    .card h3 {
-      margin: 0;
-      color: var(--teal-dark);
-    }
-
-    footer {
-      background: var(--teal-dark);
-      color: var(--text-light);
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-
-    .contact-form input, .contact-form textarea {
-      width: 100%;
-      padding: 0.7rem;
+      display: block;
       margin: 0.5rem 0;
-      border: 1px solid #b2dfdb;
-      border-radius: 4px;
     }
-
-    .contact-form button {
-      background: var(--teal);
-      color: white;
-      padding: 0.7rem 1.5rem;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .contact-form button:hover {
-      background: var(--teal-dark);
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
 
-  <header class="hero">
-    <h1>Hello, I'm TaCianna</h1>
-    <p>Learning Web Developer & Support Engineer – sharing my journey as I challenge myself and learn new things. </p>
-     <script src="https://cmp.osano.com/AzZcpvRm9bbsqngN/19cb2fc3-52d5-478b-9e31-3e9e166d1011/osano.js"></script>
+<header class="hero">
+  <h1>Hello, I'm TaCianna</h1>
+  <p>Learning Web Developer & Support Engineer – sharing my journey as I challenge myself and learn new things.</p>
+  <script src="https://cmp.osano.com/AzZcpvRm9bbsqngN/19cb2fc3-52d5-478b-9e31-3e9e166d1011/osano.js"></script>
+</header>
 
-  </header>
+<nav>
+  <a href="#about">About</a>
+  <a href="#portfolio">Portfolio</a>
+  <a href="#blog">Blog</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#contact">Contact</a>
-  </nav>
+<section id="about">
+  <h2>About Me</h2>
+  <p>I'm refreshing my developer skills and reigniting my passion for building meaningful, user-friendly web experiences. This site is my space to document progress, share projects, and reflect on what I’m learning along the way. I'm glad to have you here as I continue to grow and create. Check back soon for updates.</p>
+</section>
 
- <!-- <section id="portfolio" class="portfolio">
-    <h2>Portfolio</h2>
-    <div class="card">
-      <h3>Project One</h3>
-      <p>Built with HTML, CSS, and JavaScript. <a href="#">View Project</a></p>
-    </div>
-    <div class="card">
-      <h3>Project Two</h3>
-      <p>A React-based app for tracking tasks. <a href="#">View on GitHub</a></p>
-    </div>
-  </section>
+<!-- <section id="portfolio" class="portfolio">
+  <h2>Portfolio</h2>
+  <div class="card">
+    <h3>Project One</h3>
+    <p>Built with HTML, CSS, and JavaScript. <a href="#">View Project</a></p>
+  </div>
+  <div class="card">
+    <h3>Project Two</h3>
+    <p>A React-based app for tracking tasks. <a href="#">View on GitHub</a></p>
+  </div>
+</section>
 
-  <section id="blog" class="blog">
-    <h2>Latest Blog Posts</h2>
-    <div class="card">
-      <h3>5 Lessons From My First Freelance Project</h3>
-      <p>Reflecting on the challenges and what I learned... <a href="#">Read more</a></p>
-    </div>
-    <div class="card">
-      <h3>Why I Switched to Tailwind CSS</h3>
-      <p>Thoughts on styling and productivity... <a href="#">Read more</a></p>
-    </div>
-  </section> -->
+<section id="blog" class="blog">
+  <h2>Latest Blog Posts</h2>
+  <div class="card">
+    <h3>5 Lessons From My First Freelance Project</h3>
+    <p>Reflecting on the challenges and what I learned... <a href="#">Read more</a></p>
+  </div>
+  <div class="card">
+    <h3>Why I Switched to Tailwind CSS</h3>
+    <p>Thoughts on styling and productivity... <a href="#">Read more</a></p>
+  </div>
+</section> -->
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p> I'm refreshing my developer skills and reigniting my passion for building meaningful, user-friendly web experiences. This site is my space to document progress, share projects, and reflect on what I’m learning along the way. I'm glad to have you here as I continue to grow and create. Check back soon for updates.</p>
-  </section>
+<section id="contact">
+  <h2>Contact Me</h2>
+  <form class="contact-form">
+    <input type="text" placeholder="Your Name" required />
+    <input type="email" placeholder="Your Email" required />
+    <textarea placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
+<footer>
+  <p>&copy; 2025 TaCianna's Portfolio Blog</p>
+  <p>
+    <a href="https://github.com/TMcK-cloud30">GitHub</a> |
+    <a href="https://www.linkedin.com/in/taciannamcknight">LinkedIn</a>
+  </p>
+</footer>
 
-  <footer>
-    <p>&copy; 2025 TaCianna's Portfolio Blog</p>
-    <p>
-      <a href="https://github.com/TMcK-cloud30" style="color: white;">GitHub</a> |
-      <a href="https://www.linkedin.com/in/taciannamcknight" style="color: white;">LinkedIn</a>
-    </p>
-    </div>
-  </footer>
+<script>
+  const cards = document.querySelectorAll('.card');
+
+  const reveal = () => {
+    cards.forEach(card => {
+      const cardTop = card.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+
+      if (cardTop < windowHeight - 50) {
+        card.style.opacity = '1';
+        card.style.transform = 'translateY(0)';
+      }
+    });
+  };
+
+  window.addEventListener('scroll', reveal);
+
+  reveal();
+</script>
+
 </body>
 </html>
