@@ -6,20 +6,46 @@
   <title>Contact Me – TaCianna</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Include your full CSS here — same as in your main file */
-    body {
-      font-family: 'Roboto', sans-serif;
-      background: #d0f0ef;
-      color: #073b4c;
-      margin: 0;
-      padding: 0;
+    :root {
+      --teal-dark: #006d77;
+      --teal: #0096a1;
+      --teal-light: #d0f0ef;
+      --text-dark: #073b4c;
+      --text-light: #ffffff;
     }
 
-    header {
-      background: linear-gradient(135deg, #006d77, #0096a1);
-      color: white;
-      padding: 2rem;
+    body {
+      margin: 0;
+      font-family: 'Roboto', Arial, sans-serif;
+      background: var(--teal-light);
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    header.hero {
+      background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+      color: var(--text-light);
+      padding: 3rem 2rem;
       text-align: center;
+    }
+
+    nav {
+      background: var(--teal);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: var(--text-light);
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #ffde59;
+      transform: scale(1.1);
     }
 
     section {
@@ -40,21 +66,23 @@
     }
 
     .contact-form button {
-      background: #0096a1;
+      background: var(--teal);
       color: white;
       padding: 0.7rem 1.5rem;
       border: none;
       border-radius: 4px;
       cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
     }
 
     .contact-form button:hover {
       background: #ffde59;
-      color: #073b4c;
+      color: var(--text-dark);
+      transform: translateY(-2px);
     }
 
     footer {
-      background: #006d77;
+      background: var(--teal-dark);
       color: white;
       text-align: center;
       padding: 1rem;
@@ -66,19 +94,28 @@
       text-decoration: none;
       margin: 0 0.5rem;
     }
+
+    @media (max-width: 600px) {
+      nav a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <header>
-<nav>
-    <a href="index.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-
+  <header class="hero">
     <h1>Contact Me</h1>
     <p>I'd love to hear from you! Fill out the form below to get in touch.</p>
   </header>
+
+  <!-- Nav bar -->
+  <nav>
+    <a href="index.html#about">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
   <section>
     <form class="contact-form">
       <input type="text" placeholder="Your Name" required />
@@ -91,11 +128,11 @@
   <footer>
     <p>&copy; 2025 TaCianna's Portfolio Blog</p>
     <p>
-      <a href="index.html">Home</a> |
       <a href="https://github.com/tmck07">GitHub</a> |
       <a href="https://www.linkedin.com/in/taciannamcknight">LinkedIn</a> |
       <a href="https://www.taciannamcknight.com">Resume</a>
     </p>
   </footer>
+
 </body>
 </html>
