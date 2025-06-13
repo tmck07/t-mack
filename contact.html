@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Contact Me – TaCianna</title>
+
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --teal-dark: #006d77;
@@ -27,6 +30,12 @@
       color: var(--text-light);
       padding: 3rem 2rem;
       text-align: center;
+      animation: fadeIn 1s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to   { opacity: 1; transform: translateY(0); }
     }
 
     nav {
@@ -50,11 +59,21 @@
 
     section {
       padding: 2rem;
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
       background: white;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+
+    .hero h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      color: #dceff0;
     }
 
     .contact-form input, .contact-form textarea {
@@ -83,7 +102,7 @@
 
     footer {
       background: var(--teal-dark);
-      color: white;
+      color: var(--text-light);
       text-align: center;
       padding: 1rem;
       margin-top: 2rem;
@@ -96,10 +115,29 @@
     }
 
     @media (max-width: 600px) {
-      nav a {
-        display: block;
-        margin: 0.5rem 0;
-      }
+      .hero h1 { font-size: 2rem; }
+      nav a { display: block; margin: 0.5rem 0; }
+    }
+
+    .osano-cm-show-do-not-sell {
+      border-radius: 10px !important;
+    }
+
+    .osano-cm-dialog {
+      border-radius: 10px !important;
+      font-family: 'Playfair Display', serif !important;
+    }
+
+    .osano-cm-button {
+      background-color: #0056b3 !important;
+      color: #ffffff !important;
+      border-radius: 5px !important;
+      font-size: 16px !important;
+      padding: 10px 20px !important;
+    }
+
+    .osano-cm-info {
+      font-family: 'Playfair Display', serif !important;
     }
   </style>
 </head>
@@ -108,13 +146,13 @@
   <header class="hero">
     <h1>Contact Me</h1>
     <p>I'd love to hear from you! Fill out the form below to get in touch.</p>
+    <script src="https://cmp.osano.com/AzZcpvRm9bbsqngN/19cb2fc3-52d5-478b-9e31-3e9e166d1011/osano.js"></script>
+  </header>
 
-<!-- Nav bar -->
   <nav>
     <a href="index.html">About</a>
     <a href="contact.html">Contact</a>
   </nav>
-  </header>
 
   <section>
     <form class="contact-form">
@@ -125,32 +163,16 @@
     </form>
   </section>
 
-</body>
-
   <footer>
     <p>&copy; 2025 TaCianna's Portfolio Blog</p>
     <p>
       <a href="https://github.com/tmck07">GitHub</a> |
       <a href="https://www.linkedin.com/in/taciannamcknight">LinkedIn</a> |
-            <a href="https://www.taciannamcknight.com">Resume</a> |
+      <a href="https://www.taciannamcknight.com">Resume</a> |
       <a href="#" onclick="Osano.cm.showDrawer('osano-cm-dom-info-dialog-open')">Cookie Preferences</a> |
       <a href="#" onclick="Osano.cm.showDoNotSell()">Do Not Sell or Share My Personal Information</a>
     </p>
-</footer>
+  </footer>
 
-<script> const reveal = () => {
-  cards.forEach(card => {
-    const cardTop = card.getBoundingClientRect().top;
-    const windowHeight = window.innerHeight;
-
-    if (cardTop < windowHeight - 100) {
-      card.classList.add('visible');
-    } else {
-      card.classList.remove('visible');
-    }
-  });
-};
-
-window.addEventListener('scroll', reveal); </script>
-
+</body>
 </html>
