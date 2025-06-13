@@ -125,6 +125,8 @@
     </form>
   </section>
 
+</body>
+
   <footer>
     <p>&copy; 2025 TaCianna's Portfolio Blog</p>
     <p>
@@ -134,5 +136,21 @@
       <a href="#" onclick="Osano.cm.showDrawer('osano-cm-dom-info-dialog-open')">Cookie Preferences</a> |
       <a href="#" onclick="Osano.cm.showDoNotSell()">Do Not Sell or Share My Personal Information</a>
     </p>
-</body>
+</footer>
+
+<script> const reveal = () => {
+  cards.forEach(card => {
+    const cardTop = card.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (cardTop < windowHeight - 100) {
+      card.classList.add('visible');
+    } else {
+      card.classList.remove('visible');
+    }
+  });
+};
+
+window.addEventListener('scroll', reveal); </script>
+
 </html>
