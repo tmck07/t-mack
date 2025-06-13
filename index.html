@@ -208,10 +208,17 @@
     </p>
   </footer>
 
-  <script>
-    const cards = document.querySelectorAll('.card');
+  const reveal = () => {
+  cards.forEach(card => {
+    const cardTop = card.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
 
-    const reveal = () => {
-      cards.forEach(card => {
-        const cardTop
-</script>
+    if (cardTop < windowHeight - 100) {
+      card.classList.add('visible');
+    } else {
+      card.classList.remove('visible');
+    }
+  });
+};
+
+window.addEventListener('scroll', reveal);
