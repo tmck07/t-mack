@@ -180,6 +180,20 @@
       <a href="https://my.datasubject.com/AzZcpvRm9bbsqngN/48512" target="_blank"> Subject Rights Form</a>
     </p>
   </footer>
+<script>
+  const reveal = () => {
+  cards.forEach(card => {
+    const cardTop = card.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
 
+    if (cardTop < windowHeight - 100) {
+      card.classList.add('visible');
+    } else {
+      card.classList.remove('visible');
+    }
+  });
+};
+
+window.addEventListener('scroll', reveal); </script>
 </body>
 </html>
