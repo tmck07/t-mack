@@ -56,7 +56,28 @@
       color: #ffde59;
       transform: scale(1.1);
     }
+    
+    body.sticky-header {
+  padding-top: 100px;
+}
 
+body.sticky-header .hero {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background-color: rgba(52, 152, 219, 0.9);
+  z-index: 1000;
+  padding: 1rem;
+  transition: all 0.3s ease-in-out;
+}
+
+body.sticky-header .hero h1 {
+  font-size: 1.5rem;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+}
     section {
       padding: 2rem;
       max-width: 900px;
@@ -169,6 +190,7 @@
       font-family: 'Playfair Display', serif !important;
     }
   </style>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
 
@@ -213,8 +235,19 @@
     }
   });
 };
-
 window.addEventListener('scroll', reveal); </script>
+  <script>
+  $(function(){
+    $(window).scroll(function(){
+      var winTop = $(window).scrollTop();
+      if(winTop >= 30){
+        $("body").addClass("sticky-header");
+      } else {
+        $("body").removeClass("sticky-header");
+      }
+    });
+  });
+  </script>
 </body>
 </html>
 
