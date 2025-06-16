@@ -73,7 +73,7 @@
 }
 
 body.sticky-header .hero {
-  position: fixed;
+  animation: none !important;
   top: 0;
   left: 0;
   right: 0;
@@ -119,25 +119,22 @@ body.sticky-header .hero h1 {
       margin: 1rem 0;
       border-left: 5px solid var(--teal);
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      opacity: 0;
       transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease, box-shadow 0.3s ease;
     }
-
+     .card.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
     }
-
     .card h3 {
       margin: 0;
       color: var(--teal-dark);
     }
-    .card.visible {
-      opacity: 1;
-      transform: translateY(0);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
+
     footer {
       background: var(--teal-dark);
       color: var(--text-light);
@@ -217,7 +214,9 @@ body.sticky-header .hero h1 {
     padding: 2rem !important;
     max-width: 90% !important;
     width: 400px !important;
-  animation: popupFade 0.3s ease-in-out forwards !important;
+    animation: popupFade 0.3s ease-in-out forwards !important;
+    animation-delay: 0.1s !important;
+   }
 }
   </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -239,6 +238,16 @@ body.sticky-header .hero h1 {
   <section id="about">
     <h2>About Me</h2>
     <p>I'm TaCianna McKnight, a passionate support engineer who enjoys solving technical challenges and building user-first experiences. I created this space to document my journey as I deepen my web development skills and explore creative problem-solving through code. I’m excited to share what I’m learning and creating—thanks for stopping by!</p>
+  </section>
+  <section>
+  <div class="card">
+    <h3>Project One</h3>
+    <p>This is a description of a project or post.</p>
+  </div>
+  <div class="card">
+    <h3>Project Two</h3>
+    <p>Another awesome thing I’ve built or learned.</p>
+  </div>
   </section>
 
   <footer>
