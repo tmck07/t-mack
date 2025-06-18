@@ -223,6 +223,75 @@
     animation: popupFade 0.3s ease-in-out forwards !important;
     animation-delay: 0.1s !important;
   }
+
+.project-section {
+  padding: 3rem 1rem;
+  background-color: #f9f9f9;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  margin: 2rem auto;
+  max-width: 720px;
+  transform: translateY(20px);
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.project-info {
+  padding: 1.5rem;
+}
+
+.project-info h3 {
+  margin-top: 0;
+  color: #d63384;
+}
+
+.project-info p {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px 18px;
+  margin-right: 10px;
+  background-color: #d63384;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #ad1457;
+}
+
+.btn.github {
+  background-color: #333;
+}
+
+.btn.github:hover {
+  background-color: #555;
+}
+
 </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
@@ -244,17 +313,18 @@
     <h2>About Me</h2>
     <p>I'm TaCianna McKnight, a passionate support engineer who enjoys solving technical challenges and building user-first experiences. I created this space to document my journey as I deepen my web development skills and explore creative problem-solving through code. I’m excited to share what I’m learning and creating—thanks for stopping by!</p>
   </section>
-  <section>
-  <div class="card">
-    <h3>Project One</h3>
-    <p>This is a description of a project or post.</p>
+ <section id="projects" class="project-section">
+  <h2>Projects</h2>
+  <div class="project-card">
+    <img src="images/dating-form-thumbnail.jpg" alt="Dating Website Form Screenshot">
+    <div class="project-info">
+      <h3>Dating Website Form</h3>
+      <p>A modern dating form UI collecting user preferences and lifestyle details. Features interactive fields, colorful layout, and responsive design using pure HTML, CSS, and minimal JS.</p>
+           <a href="https://tmck07.github.io/datingsite.git/" target="_blank" class="btn">View Live</a>
+      <a href="https://tmck07.github.io/" target="_blank" class="btn github">GitHub</a>
+    </div>
   </div>
-  <div class="card">
-    <h3>Project Two</h3>
-    <p>Another awesome thing I’ve built or learned.</p>
-  </div>
-  </section>
-
+</section>
   <footer>
     <p>&copy; 2025 TaCianna's Portfolio Blog</p>
     <p>
@@ -267,7 +337,7 @@
     </p>
   </footer>
   <script>
-  const cards = document.querySelectorAll('.card');
+  const cards = document.querySelectorAll('.card,.project-card');
 
   const reveal = () => {
     cards.forEach(card => {
